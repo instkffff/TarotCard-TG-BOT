@@ -1,5 +1,7 @@
 import { Telegraf } from 'telegraf';
-require('dotenv').config({path:'conf.env'})
+import { config } from 'dotenv';
+
+config({ path: './conf.env' });
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
