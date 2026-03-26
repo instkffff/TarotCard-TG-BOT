@@ -1,0 +1,24 @@
+Table Name: user_sessions
+-------------------------------------------------------------------------------
+Column Name        | Data Type | Constraints      | Description
+-------------------------------------------------------------------------------
+user_id            | TEXT      | PRIMARY KEY      | 用户唯一标识符 (OpenID/UUID)
+step               | INTEGER   | DEFAULT 0        | 当前所处阶段 (0:未开始, 1:已输入事项, 2:已抽行星...)
+card_star          | INTEGER   | NULL             | 行星牌 ID (0-21)
+card_element       | INTEGER   | NULL             | 元素牌 ID (0-21)
+card_constellation | INTEGER   | NULL             | 星座牌 ID (0-21)
+card_main          | TEXT      | NULL             | 三张主牌 ID，存储格式如 "10,5,21"
+used_card_ids      | TEXT      | NULL             | 已抽取的全部 ID 集合，格式如 "1,5,8,10,12"
+updated_at         | DATETIME  | DEFAULT CURRENT_TIMESTAMP | 最后更新时间
+-------------------------------------------------------------------------------
+
+Table Name: task_history
+-------------------------------------------------------------------------------
+Column Name        | Data Type | Constraints      | Description
+-------------------------------------------------------------------------------
+id                 | INTEGER   | PRIMARY KEY AUTOINCREMENT | 自增主键
+user_id            | TEXT      | NOT NULL         | 关联用户 ID
+content_md5        | TEXT      | NOT NULL         | 事项内容的 MD5 哈希值
+created_at         | DATETIME  | DEFAULT CURRENT_TIMESTAMP | 创建时间
+-------------------------------------------------------------------------------
+Index: idx_user_md5 (user_id, content_md5)  -- 用于快速查询当天是否重复

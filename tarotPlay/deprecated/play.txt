@@ -1,0 +1,34 @@
+== 命令 ==
+
+开始 /start
+重启 /restart
+退出 /end
+帮助 /help
+
+== 过程命令 ==
+
+输入所求事项 /aim
+抽取行星牌 /star
+抽取元素牌 /element
+抽取星座牌 /constellation
+抽取主牌 /main
+
+== 流程 == 
+
+1. 开始 /start
+2. 输入所求事项 /aim
+3. 阶段一开始
+4. 抽取一张 行星牌 /star
+    4.1 返回 卡牌sticker + 说明
+    4.2 您抽取的行星 [star] 现在处于 [constellation]
+5. 抽取一张 元素牌 /element
+    5.1 返回 元素sticker + 说明
+6. 抽取一张 星座牌 /constellation
+    6.1 返回 卡牌sticker + 说明
+    6.2 您抽取的星座 [constellation] 中现在有 [star] or 现在没有行星
+7. 第一阶段总结
+8. 阶段二开始
+9. 抽取三张 主牌 /main
+    9.1 返回 主牌sticker + 说明
+10. 第二阶段总结
+11. 综合输出 完成占卜 /end
