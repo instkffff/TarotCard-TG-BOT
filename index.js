@@ -1,6 +1,7 @@
 // 在其他文件中使用
 import { server } from './httpApi/main.js';
 import { clearDatabase } from './database/user/clearDatabase.js';
+import { bot } from './telegramBot/telegram.js';
 
 function scheduleDailyTask() {
   const now = new Date();
@@ -34,3 +35,6 @@ server.listen(9009, () => {
   console.log('Server running on port 9009');
   console.log('数据库清理任务已设置 - 每天0点执行');
 });
+
+// 启动机器人
+bot.launch();

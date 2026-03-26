@@ -31,9 +31,9 @@ bot.on('inline_query', async (ctx) => {
     const results = [{
       type: 'article',
       id: `tarot_${Date.now()}`,
-      // 如果用户没输入，标题显示“今日运势”，否则显示用户输入的内容
+      // 如果用户没输入，标题显示"今日运势"，否则显示用户输入的内容
       title: userInput ? `✨ 占卜：${userInput}` : '🔮 点击占卜今日运势',
-      description: userInput ? `点击获取关于“${userInput}”的启示` : '默认占卜今日运势，看看你的运气吧！',
+      description: userInput ? `点击获取关于"${userInput}"的启示` : '默认占卜今日运势，看看你的运气吧！',
       input_message_content: {
         message_text: `🔮 **塔罗占卜结果**\n\n**问：** ${requestText}\n\n**解：**\n${tarotText}\n\n*—— NightCandle*`,
         parse_mode: 'Markdown'
@@ -58,4 +58,5 @@ bot.on('inline_query', async (ctx) => {
   }
 });
 
-bot.launch()
+// 导出 bot 实例
+export { bot }
