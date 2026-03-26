@@ -22,13 +22,13 @@ function fillZodiacTemplate(data) {
 
 function fillMainTemplate(data) { 
     let d = mainData(data)
-    let template = mainCardPart(d)
+    let template = mainCardPart(d) + tailPart()
     return template
 }
 
 function fillTitleTemplate(title) { 
     let d = title
-    let template = titlePart(d) + tailPart()
+    let template = titlePart(d)
     return template
 }
 
