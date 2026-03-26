@@ -30,16 +30,14 @@ bot.on('inline_query', async (ctx) => {
     const data = await response.json();
     console.log('[API 返回原始数据]:', data); // 重点：看看这里输出了什么
 
-    // 检查字段是否存在
-    const tarotText = data.txt || data.result || data.message || 'API返回数据格式不符';
 
     const results = [{
       type: 'article',
       id: `tarot_${Date.now()}`,
       title: userInput ? `✨ 占卜：${userInput}` : '🔮 点击占卜今日运势',
-      description: tarotText.substring(0, 50) + '...', // 预览部分内容
+      description: data.substring(0, 50) + '...', // 预览部分内容
       input_message_content: {
-        message_text: `🔮 **塔罗占卜结果**\n\n**问：** ${requestText}\n\n**解：**\n${tarotText}`,
+        message_text: `🔮 **塔罗占卜结果**\n\n**问：** ${requestText}\n\n**解：**\n${data}`,
         parse_mode: 'Markdown'
       }
     }];
