@@ -24,4 +24,6 @@ function clearDatabase() {
   }
 }
 
+/* clearDatabase(); */
+
 export { clearDatabase };

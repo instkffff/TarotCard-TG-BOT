@@ -1,8 +1,8 @@
 import { GetCard } from './GetCard.js'
 import { GetStarLocation } from './GetStarLocation.js'
 import { compress_starlocation, compress_card, mergeStarCard } from './dataCovert/compress.js'
-import { stringToBase64, base64ToString } from './dataCovert/bash64.js'
-import { stringToMD5 } from './dataCovert/md5.js'
+import { stringToBase64, base64ToString } from '../database/covert/bash64.js'
+import { stringToMD5 } from '../database/covert/md5.js'
 import { queryByUserId } from '../database/query.js'
 import { insertTaskRecord } from '../database/insert.js'
 

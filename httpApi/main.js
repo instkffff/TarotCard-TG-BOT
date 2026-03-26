@@ -62,5 +62,10 @@ const server = createServer(async (req, res) => {
   }
 });
 
+/* server.listen(9009, () => {
+  console.log('Server running on port 9009');
+  console.log('数据库清理任务已设置 - 每天0点执行');
+}); */
+
 // 导出服务器实例
 export { server };

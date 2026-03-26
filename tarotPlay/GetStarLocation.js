@@ -2,7 +2,6 @@ import { getStarPositions } from '../starLocation/starInZodiac.js'
 
 function GetStarLocation() {
     const starPositions = getStarPositions();
-    console.log(starPositions);
     
     const result = {};
     
