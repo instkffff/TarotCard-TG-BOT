@@ -7,8 +7,7 @@ const titlePart = (d) => `
 所求事项: ${d}
 ---
 “如其在上，如其在下。一切万物皆由唯一之理所生。”
----
-`
+---`
 
 const starPart = (d) => `
 一、行星之轮 (Planetary Aspect)
@@ -18,8 +17,7 @@ const starPart = (d) => `
 对应行星: ${d.planetName}
 行星释义: ${d.planetMeaning}
 所在星座: ${d.zodiacName}
-星座释义: ${d.zodiacMeaning}
-`
+星座释义: ${d.zodiacMeaning}`
 
 const elementPart = (d) => `
 二、元素之灵 (Elemental Essence)
@@ -27,8 +25,7 @@ const elementPart = (d) => `
 
 抽卡结果: ${d.cardName}
 元素共鸣: ${d.elementName}
-元素释义: ${d.elementMeaning}
-`
+元素释义: ${d.elementMeaning}`
 
 const ZodiacPart = (d) => `
 三、星图宫位 (Zodiac Constellation)
@@ -39,8 +36,7 @@ const ZodiacPart = (d) => `
 星座释义: ${d.zodiacMeaning}
 
 内部巡行能量: 
-${d.starInZodiac}
-`
+${d.starInZodiac}`
 
 const mainCardPart = (d) => `
 四、主牌终极判词 (Major Arcana Verdict)
@@ -51,8 +47,7 @@ const mainCardPart = (d) => `
 抽卡结果2: ${d.cardName2}
 卡牌释义2: ${d.cardMeaning2}
 抽卡结果3: ${d.cardName3}
-卡牌释义3: ${d.cardMeaning3}
-`
+卡牌释义3: ${d.cardMeaning3}`
 
 const tailPart = () => `
 ===
@@ -71,7 +66,6 @@ const tailPart = () => `
    “结合抽到行星牌的星座位置，星座牌抽卡时包含的行星，进行解析。”
 
 4. [整体吉凶解析]
-  “请结合以上所有内容分5级。'大吉'、'吉'、'平'、'凶'、'大凶'，给出综合评价。”
-`
+  “请结合以上所有内容分5级。'大吉'、'吉'、'平'、'凶'、'大凶'，给出综合评价。”`
 
 export { titlePart , starPart , elementPart , ZodiacPart , mainCardPart , tailPart }
