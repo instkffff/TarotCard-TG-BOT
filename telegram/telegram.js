@@ -34,7 +34,7 @@ function FinalMessage(user_id) {
 
     return {
         type: 'photo',
-        media: url + toString(rotation) + '/' + toString(cardID) + '.jpg',
+        media: url + rotation + '/' + cardID + '.jpg',
         caption: "== " + cardName + " ==" + cardMean + "<br>" + pick_pool_string, // 这里的文字会显示在图片下方
         parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
     };
