@@ -17,7 +17,12 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 function FinalMessage(user_id) {
     let { drawInfo, pick_pool_string } = draw(user_id);
     if (drawInfo === 888888) {
-        return `您已抽满10张 请洗牌以重置卡池`
+        return {
+            type: 'photo',
+            media: 'https://chilletstickerpic.pages.dev/png/5.png',
+            caption: "您已抽满10张 请重置卡池", // 这里的文字会显示在图片下方
+            parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
+        };
     }
 
     /* {
