@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 import { inline_menu } from './inline_menu.js';
 import { draw, reset } from '../draw.js';
 
-config({ path: '../conf.env' });
+config({ path: './conf.env' });
 const url = process.env.URL;
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
