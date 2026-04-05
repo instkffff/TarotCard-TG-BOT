@@ -29,7 +29,8 @@ function draw(user_id) {
     
     if (pick_pool.length >= 10){
         // 如果牌组已经到10张，则返回一个特殊值
-        return "888888";
+        let drawInfo = 888888;
+        return { drawInfo, pick_pool_string };
     }
     
     let [pickedCards, rotations] = cardPick(card_pool.card_array, pick_pool, 1);
@@ -48,9 +49,9 @@ function reset(user_id) {
 }
 
 // 测试抽卡
-/* let { drawInfo, pick_pool_string } = draw(12345678);
+let { drawInfo, pick_pool_string } = draw(12345678);
 console.log(drawInfo);
-console.log(pick_pool_string); */
+console.log(pick_pool_string);
 
 // reset(12345678);
 
