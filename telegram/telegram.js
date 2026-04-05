@@ -16,7 +16,8 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 function FinalMessage(user_id) {
     let { drawInfo, pick_pool_string } = draw(user_id);
-    if (drawInfo === 888888) {
+    console.log(drawInfo);
+    if (drawInfo === "888888") {
         return {
             type: 'photo',
             media: 'https://chilletstickerpic.pages.dev/png/5.png',

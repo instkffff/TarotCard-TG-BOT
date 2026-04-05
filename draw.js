@@ -29,7 +29,7 @@ function draw(user_id) {
     
     if (pick_pool.length >= 10){
         // 如果牌组已经到10张，则返回一个特殊值
-        return 888888;
+        return "888888";
     }
     
     let [pickedCards, rotations] = cardPick(card_pool.card_array, pick_pool, 1);
