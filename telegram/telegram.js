@@ -56,23 +56,29 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     console.log('收到选择结果:', result_id, '内联消息ID:', inline_message_id);
 
-    if (!inline_message_id) return;
-
     let user_id = from.id;
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    let finalMessage = FinalMessage(user_id);
-
-    console.log('发送最终结果:', finalMessage);
-
     if (result_id === '1') {
-        await finalReply(ctx, inline_message_id, finalMessage);
+        // 如果有 inline_message_id，编辑消息
+        if (inline_message_id) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            let finalMessage = FinalMessage(user_id);
+            console.log('发送最终结果:', finalMessage);
+            await finalReply(ctx, inline_message_id, finalMessage);
+        }
     } else if (result_id === '2') {
+        // 处理洗牌操作
         reset(user_id);
         console.log('已重置卡池');
+
+        // 可选：给用户反馈（如果需要的话）
+        // 注意：这里不能使用 inline_message_id，因为它不存在
+
+    } else if (result_id === '3') {
+        // 处理帮助选项
+        console.log('用户查看了帮助信息');
     } else {
-        return
+        console.log('未知的 result_id:', result_id);
     }
 })
 
