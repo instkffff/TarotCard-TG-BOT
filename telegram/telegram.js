@@ -35,7 +35,7 @@ function FinalMessage(user_id) {
     return {
         type: 'photo',
         media: url + rotation + '/' + cardID + '.jpg',
-        caption: "== " + cardName + " == " + cardMean + '\n' + pick_pool_string, // 这里的文字会显示在图片下方
+        caption: "== " + cardName + " == " + '\n' + cardMean + '\n' + pick_pool_string, // 这里的文字会显示在图片下方
         parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
     };
 
@@ -60,9 +60,9 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     console.log('发送最终结果:', finalMessage);
 
-    if (result_id === '1') {
+    if (result_id === 1) {
         await finalReply(ctx, inline_message_id, finalMessage);
-    } else if (result_id === '2') {
+    } else if (result_id === 2) {
         reset(user_id);
     } else {
         return
