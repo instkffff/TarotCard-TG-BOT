@@ -65,12 +65,14 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     if (result_id === '1') {
         await finalReply(ctx, inline_message_id, finalMessage);
-    } else if (result_id === '2') {
+    }
+
+    if (result_id === '2') {
         reset(user_id);
         console.log('已重置卡池');
-    } else {
-        return
     }
+
+    return;
 
 })
 
