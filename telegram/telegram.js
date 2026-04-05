@@ -85,8 +85,8 @@ async function finalReply(ctx, inline_message_id, finalMessage) {
             inline_message_id,
             {
                 type: 'photo',
-                media: finalMsg.media,
-                caption: finalMsg.caption,
+                media: finalMessage.media,
+                caption: finalMessage.caption,
                 parse_mode: 'HTML'
             },
             {
