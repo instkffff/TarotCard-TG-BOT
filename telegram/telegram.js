@@ -15,13 +15,13 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 // reset(12345678);
 
 function FinalMessage(user_id) {
-    let { drawInfo, pick_pool_string } = draw(user_id);
+    let { drawInfo, pick_pool } = draw(user_id);
     console.log(drawInfo);
     if (drawInfo === 888888) {
         return {
             type: 'photo',
             media: 'https://chilletstickerpic.pages.dev/png/5.png',
-            caption: "您已抽满10张 请重置卡池", // 这里的文字会显示在图片下方
+            caption: "您已抽满10张 请重置卡池" + '\n' + pick_pool, // 这里的文字会显示在图片下方
             parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
         };
     } else {
@@ -33,7 +33,7 @@ function FinalMessage(user_id) {
         return {
             type: 'photo',
             media: url + rotation + '/' + cardID + '.jpg',
-            caption: "== " + cardName + " == " + '\n' + cardMean + '\n' + pick_pool_string, // 这里的文字会显示在图片下方
+            caption: "== " + cardName + " == " + '\n' + cardMean +  pick_pool, // 这里的文字会显示在图片下方
             parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
         };
     }
