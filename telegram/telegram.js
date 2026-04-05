@@ -57,6 +57,8 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     let finalMessage = FinalMessage(user_id);
 
+    console.log('发送最终结果:', finalMessage);
+
     if (result_id === '1') {
         await finalReply(ctx, inline_message_id, finalMessage);
     } else if (result_id === '2') {
