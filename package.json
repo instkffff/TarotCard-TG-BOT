@@ -1,0 +1,29 @@
+{
+  "name": "tarotnew",
+  "version": "1.0.0",
+  "description": "tarot inline bot",
+  "keywords": [
+    "tarot",
+    "telegram"
+  ],
+  "homepage": "https://github.com/instkffff/TarotCard-TG-BOT#readme",
+  "bugs": {
+    "url": "https://github.com/instkffff/TarotCard-TG-BOT/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instkffff/TarotCard-TG-BOT.git"
+  },
+  "license": "ISC",
+  "author": "NightCandle",
+  "type": "module",
+  "main": "tarotBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "dotenv": "^17.4.0",
+    "telegraf": "^4.16.3"
+  }
+}
