@@ -60,9 +60,9 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     console.log('发送最终结果:', finalMessage);
 
-    if (result_id === 1) {
+    if (result_id === '1') {
         await finalReply(ctx, inline_message_id, finalMessage);
-    } else if (result_id === 2) {
+    } else if (result_id === '2') {
         reset(user_id);
         console.log('已重置卡池');
     } else {
