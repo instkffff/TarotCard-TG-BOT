@@ -50,6 +50,9 @@ bot.on('chosen_inline_result', async (ctx) => {
     const { result_id, from, inline_message_id } = ctx.update.chosen_inline_result;
 
     console.log('收到选择结果:', result_id, '内联消息ID:', inline_message_id);
+    
+    console.log(typeof result_id, result_id)
+
     if (!inline_message_id) return;
 
     let user_id = from.id;
