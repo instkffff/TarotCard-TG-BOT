@@ -50,8 +50,6 @@ bot.on('chosen_inline_result', async (ctx) => {
     const { result_id, from, inline_message_id } = ctx.update.chosen_inline_result;
 
     console.log('收到选择结果:', result_id, '内联消息ID:', inline_message_id);
-    
-    console.log(typeof result_id, result_id)
 
     if (!inline_message_id) return;
 
@@ -65,15 +63,12 @@ bot.on('chosen_inline_result', async (ctx) => {
 
     if (result_id === '1') {
         await finalReply(ctx, inline_message_id, finalMessage);
-    }
-
-    if (result_id === '2') {
+    } else if (result_id === '2') {
         reset(user_id);
         console.log('已重置卡池');
+    } else {
+        return
     }
-
-    return;
-
 })
 
 async function finalReply(ctx, inline_message_id, finalMessage) {
