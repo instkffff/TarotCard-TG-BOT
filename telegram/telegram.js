@@ -32,12 +32,20 @@ function FinalMessage(user_id) {
     let cardMean = drawInfo.card_meaning;
     let rotation = drawInfo.rotation;
 
-    return {
+    /* return {
         type: 'photo',
         media: url + rotation + '/' + cardID + '.jpg',
         caption: "== " + cardName + " ==" + cardMean + "<br>" + pick_pool_string, // 这里的文字会显示在图片下方
         parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
-    };
+    }; */
+
+    return {
+        type: 'photo',
+        media: 'https://chilletstickerpic.pages.dev/tarot/1/40.jpg',
+        caption: '== 圣杯四 ==突然觉醒、选择快乐、接受<br>[33,32]',
+        parse_mode: 'HTML'
+    }
+
 }
 
 bot.on('inline_query', async (ctx) => {
