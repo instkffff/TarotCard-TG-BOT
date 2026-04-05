@@ -42,7 +42,7 @@ function FinalMessage(user_id) {
     return {
         type: 'photo',
         media: 'https://chilletstickerpic.pages.dev/tarot/1/40.jpg',
-        caption: '== 圣杯四 ==突然觉醒、选择快乐、接受<br>[33,32]',
+        caption: '== 圣杯四 ==突然觉醒、选择快乐、接受\n[33,32]',
         parse_mode: 'HTML'
     }
 
@@ -83,7 +83,12 @@ async function finalReply(ctx, inline_message_id, finalMessage) {
             undefined,
             undefined,
             inline_message_id,
-            finalMessage,
+            {
+                type: 'photo',
+                media: finalMsg.media,
+                caption: finalMsg.caption,
+                parse_mode: 'HTML'
+            },
             {
                 reply_markup: { inline_keyboard: [] }
             }
