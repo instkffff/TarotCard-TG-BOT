@@ -1,5 +1,0 @@
-id
-user_id
-task_md5
-task_result
-created_at
