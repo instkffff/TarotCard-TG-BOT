@@ -23,6 +23,18 @@ function FinalMessage(user_id) {
             caption: "您已抽满10张 请重置卡池", // 这里的文字会显示在图片下方
             parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
         };
+    } else {
+        let cardID = drawInfo.id;
+        let cardName = drawInfo.card_name_ZH;
+        let cardMean = drawInfo.card_meaning;
+        let rotation = drawInfo.rotation;
+
+        return {
+            type: 'photo',
+            media: url + rotation + '/' + cardID + '.jpg',
+            caption: "== " + cardName + " == " + '\n' + cardMean + '\n' + pick_pool_string, // 这里的文字会显示在图片下方
+            parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
+        };
     }
 
     /* {
@@ -31,19 +43,6 @@ function FinalMessage(user_id) {
         card_meaning: '大局观、领导者、克服挑战',
         rotation: 0
     } */
-
-    let cardID = drawInfo.id;
-    let cardName = drawInfo.card_name_ZH;
-    let cardMean = drawInfo.card_meaning;
-    let rotation = drawInfo.rotation;
-
-    return {
-        type: 'photo',
-        media: url + rotation + '/' + cardID + '.jpg',
-        caption: "== " + cardName + " == " + '\n' + cardMean + '\n' + pick_pool_string, // 这里的文字会显示在图片下方
-        parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
-    };
-
 }
 
 bot.on('inline_query', async (ctx) => {
