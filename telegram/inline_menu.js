@@ -4,7 +4,7 @@ const inline_menu = [
         id: '1',
         title: '抽卡',
         description: '点击抽取塔罗牌',
-        thumb_url: 'https://cdn-icons-png.flaticon.com/512/1043/1043440.png', // 对应左侧头像
+        thumb_url: 'https://cdn-icons-png.flaticon.com/512/4867/4867324.png', // 对应左侧头像
         input_message_content: {
             message_text: `抽卡`
         },
@@ -22,7 +22,7 @@ const inline_menu = [
         id: '2',
         title: '洗牌',
         description: '点击重置牌池',
-        thumb_url: 'https://cdn-icons-png.flaticon.com/512/1043/1043440.png',
+        thumb_url: 'https://cdn-icons-png.flaticon.com/512/17926/17926065.png',
         input_message_content: {
             message_text: `🔄 洗牌成功`
         }
@@ -32,7 +32,7 @@ const inline_menu = [
         id: '4',
         title: '总结',
         description: '总结所有抽卡',
-        thumb_url: 'https://cdn-icons-png.flaticon.com/512/1043',
+        thumb_url: 'https://cdn-icons-png.flaticon.com/512/17300/17300328.png',
         input_message_content: {
             message_text: `抽卡总结`
         },
@@ -49,7 +49,7 @@ const inline_menu = [
         id: '3',
         title: '帮助',
         description: '获取帮助',
-        thumb_url: 'https://cdn-icons-png.flaticon.com/512/1043/1043440.png',
+        thumb_url: 'https://cdn-icons-png.flaticon.com/512/9195/9195785.png',
         input_message_content: {
             message_text: 
 `== 塔罗牌Bot使用方法 ==
