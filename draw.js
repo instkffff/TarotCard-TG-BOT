@@ -14,7 +14,7 @@ import { cardInfo } from './CardPick/cardInfo.js'
 function queryPickPool(user_id) {
     let pick_pool = getPickPoolByUserId(user_id);
     if (pick_pool == null) {
-        insertUser(user_id, []);
+        insertUser(user_id, [[],[]]);
         pick_pool = getPickPoolByUserId(user_id);
     }
     return pick_pool;
@@ -27,15 +27,17 @@ function draw(user_id) {
     // 将字符串转换为数组
     let pick_pool = JSON.parse(pick_pool_string);
     
-    if (pick_pool.length >= 10){
+    if (pick_pool[0].length >= 10){
         // 如果牌组已经到10张，则返回一个特殊值
         let drawInfo = 888888;
         return { drawInfo, pick_pool };
     }
     
-    let [pickedCards, rotations] = cardPick(card_pool.card_array, pick_pool, 1);
+    let [pickedCards, rotations] = cardPick(card_pool.card_array, pick_pool[0], 1);
 
-    pick_pool.push(pickedCards[0]);
+    pick_pool[0].push(pickedCards[0]);
+    pick_pool[1].push(rotations[0]);
+
     updateUserPickPool(user_id, pick_pool);
 
     let drawInfo = cardInfo(card_pool, card_mean, rotations[0], pickedCards[0]);
@@ -45,13 +47,13 @@ function draw(user_id) {
 
 
 function reset(user_id) {
-    updateUserPickPool(user_id, []);
+    updateUserPickPool(user_id, [[],[]]);
 }
 
 // 测试抽卡
-/* let { drawInfo, pick_pool_string } = draw(12345678);
+let { drawInfo, pick_pool } = draw(12345678);
 console.log(drawInfo);
-console.log(pick_pool_string); */
+console.log(pick_pool);
 
 // reset(12345678);
 
