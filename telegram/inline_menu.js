@@ -29,6 +29,23 @@ const inline_menu = [
     },
     {
         type: 'article',
+        id: '4',
+        title: '总结',
+        description: '总结所有抽卡',
+        thumb_url: 'https://cdn-icons-png.flaticon.com/512/1043',
+        input_message_content: {
+            message_text: `抽卡总结`
+        },
+        reply_markup:{
+            inline_keyboard:[
+                [
+                    {text:'⏳ 抽卡总结中请稍后...','callback_data':'none'}
+                ]
+            ]
+        }
+    },
+    {
+        type: 'article',
         id: '3',
         title: '帮助',
         description: '获取帮助',

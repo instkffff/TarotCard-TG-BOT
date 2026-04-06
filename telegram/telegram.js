@@ -3,6 +3,7 @@ import { Telegraf } from 'telegraf';
 import { config } from 'dotenv';
 import { inline_menu } from './inline_menu.js';
 import { draw, reset } from '../draw.js';
+import { drawSum } from '../drawSum.js';
 
 config({ path: './conf.env' });
 const url = process.env.URL;
@@ -46,6 +47,11 @@ function FinalMessage(user_id) {
     } */
 }
 
+function SumMessage(user_id) {
+    let sum = drawSum(user_id);
+    return sum;
+}
+
 bot.on('inline_query', async (ctx) => {
     const results = inline_menu
     return ctx.answerInlineQuery(results, { cache_time: 0 });
@@ -77,10 +83,32 @@ bot.on('chosen_inline_result', async (ctx) => {
     } else if (result_id === '3') {
         // 处理帮助选项
         console.log('用户查看了帮助信息');
-    } else {
-        console.log('未知的 result_id:', result_id);
+    } else if (result_id === '4') {
+        if (inline_message_id) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            let sumMessage = SumMessage(user_id);
+            console.log('发送最终结果:', sumMessage);
+            await sumReply(ctx, inline_message_id, sumMessage);
+        }
     }
 })
+
+
+async function sumReply(ctx, inline_message_id, sumMessage) {
+    try {
+        await ctx.telegram.editMessageText(
+            undefined,
+            undefined,
+            inline_message_id,
+            sumMessage,
+            {
+                reply_markup: { inline_keyboard: [] }
+            }
+        )   
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 async function finalReply(ctx, inline_message_id, finalMessage) {
     try {
@@ -88,12 +116,7 @@ async function finalReply(ctx, inline_message_id, finalMessage) {
             undefined,
             undefined,
             inline_message_id,
-            {
-                type: 'photo',
-                media: finalMessage.media,
-                caption: finalMessage.caption,
-                parse_mode: 'HTML'
-            },
+            finalMessage,
             {
                 reply_markup: { inline_keyboard: [] }
             }

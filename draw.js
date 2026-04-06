@@ -51,11 +51,11 @@ function reset(user_id) {
 }
 
 // 测试抽卡
-let { drawInfo, pick_pool } = draw(12345678);
+/* let { drawInfo, pick_pool } = draw(12345678);
 console.log(drawInfo);
-console.log(pick_pool);
+console.log(pick_pool); */
 
-// reset(12345678);
+/* reset(12345678); */
 
 export { draw, reset };
 
