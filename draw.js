@@ -27,7 +27,7 @@ function draw(user_id) {
     // 将字符串转换为数组
     let pick_pool = JSON.parse(pick_pool_string);
     
-    if (pick_pool[0].length >= 10){
+    if (pick_pool[0].length >= 11){
         // 如果牌组已经到10张，则返回一个特殊值
         let drawInfo = 888888;
         return { drawInfo, pick_pool };
