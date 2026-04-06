@@ -21,7 +21,7 @@ function FinalMessage(user_id) {
     if (drawInfo === 888888) {
         return {
             type: 'photo',
-            media: 'https://chilletstickerpic.pages.dev/png/5.png',
+            media: 'https://chilletstickerpic.pages.dev/tarot/cover.jpg',
             caption: "您已抽满10张 请重置卡池" + '\n' + pick_pool[0], // 这里的文字会显示在图片下方
             parse_mode: 'HTML'     // 如果文字里有加粗等标签，请保留
         };
