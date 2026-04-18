@@ -52,7 +52,7 @@ const card_mean = {
         ["satisfaction, emotional stability, luxury", "lack of inner joy, smugness, dissatisfaction"],
         ["inner happiness, fulfillment, dreams coming true", "shattered dreams, broken family, domestic disharmony"],
         ["happy surprise, dreamer, sensitivity", "emotional immaturity, insecurity, disappointment"],
-        ["following", "moodiness, disappointment"],
+        ["following the heart, idealist, romantic", "moodiness, disappointment"],
         ["compassion, calm, comfort", "martyrdom, insecurity, dependence"],
         ["compassion, control, balance", "coldness, moodiness, bad advice"],
 
@@ -141,7 +141,7 @@ const card_mean = {
         ["满足、情感稳定、奢侈", "缺乏内在喜悦、自满、不满"],
         ["内在幸福、圆满、梦想成真", "梦想破碎、家庭破裂、家庭不和谐"],
         ["快乐的惊喜、梦想家、敏感", "情感不成熟、不安全感、失望"],
-        ["追随", "情绪化、失望"],
+        ["受心指引、理想主义、浪漫", "情绪化、失望"],
         ["同情、平静、安慰", "殉道、不安全感、依赖"],
         ["同情、控制、平衡", "冷酷、情绪化、坏建议"],
 

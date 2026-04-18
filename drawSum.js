@@ -40,8 +40,8 @@ function drawSum(user_id) {
     return result.trim(); // 返回结果并去除末尾换行符
 }
 
-// 测试
+/* // 测试
 let resultSum = drawSum(12345678)
-console.log(resultSum)
+console.log(resultSum) */
 
 export { drawSum }
